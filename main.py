@@ -236,3 +236,4 @@ C=[np.max(A[:,0]),np.max(A[:,1]),np.max(A[:,2]),np.max(A[:,3]),np.max(A[:,4]),np
 #zad6
 D1=np.delete(B,5,0)
 D=np.delete(D1,0,0)
+
