@@ -1,5 +1,5 @@
 import numpy as np
-
+import matplotlib.pyplot as plt
 # probne zadania z numpy
 
 #tworzenie tablicy
@@ -101,6 +101,7 @@ print(np.size(A))#out 6
 print(np.shape(A))#out (2,3)
 '''
 
+'''
 #operacje na macierzach
 
 A = np.array([[1, 0, 0],[2, 3, -1],[0, 7, 2]] )
@@ -133,4 +134,105 @@ PM = np.linalg.matrix_power(A,2) # por. A@A
 PT = A**2  # por. A*A
 #print(PT,"\n\n",A*A)#identyczne
 
+#transpozycja
+#print(A,"\n---\n",A.T)
+#A.T=A.tranpose()
 
+#A.conj().T # hermitowskie sprzezenie macierzy (dla m. zespolonych)
+# A.conj().transpose()
+
+#porównania
+#print(np.logical_not(A),"\n---\n",np.logical_and(A,B),"\n---\n",np.logical_or(A,B),"\n---\n",np.logical_xor(A,B),"\n---\n")
+
+# print( np.all(A) )
+# print( np.any(A) )
+# print( A > 4 )
+# print( np.logical_or(A>4, A<2))
+# print( np.nonzero(A>4) )
+# print( A[np.nonzero(A>4) ] )
+
+print(np.max(A),"\n---\n")
+print(np.min(A),"\n---\n")
+print(np.max(A,0),"\n---\n")
+print(np.max(A,1),"\n---\n")
+print( A.flatten() ,"\n---\n")
+print( A.flatten('F'),"\n---\n")
+'''
+
+
+#------------------------------rozdział 5-------------------
+# x = [1,2,3]
+# y = [4,6,5]
+# plt.plot(x,y)
+# plt.show()
+
+#sinus
+# x = np.arange(0.0, 2.0, 0.01)
+# y = np.sin(2.0*np.pi*x)
+# plt.plot(x,y)
+# plt.show()
+
+#sinus2
+# x = np.arange(0.0, 2.0, 0.01)
+# y = np.sin(2.0*np.pi*x)
+# plt.plot(x,y,'r:',linewidth=6)
+# plt.xlabel('Czas')
+# plt.ylabel('Pozycja')
+# plt.title('Nasz pierwszy wykres')
+# plt.grid(True)
+# plt.show()
+
+#wiele wykresów
+# x = np.arange(0.0, 2.0, 0.01)
+# y1 = np.sin(2.0*np.pi*x)
+# y2 = np.cos(2.0*np.pi*x)
+# plt.plot(x,y1,'r:',x,y2,'g')
+# plt.legend(('dane y1','dane y2'))
+# plt.xlabel('Czas')
+# plt.ylabel('Pozycja')
+# plt.title('Wykres')
+# plt.grid(True)
+# plt.show()
+
+#wiele wykresów2
+# x = np.arange(0.0, 2.0, 0.01)
+# y1 = np.sin(2.0*np.pi*x)
+# y2 = np.cos(2.0*np.pi*x)
+# y = y1*y2
+# l1, = plt.plot(x,y,'b')
+# l2,l3 = plt.plot(x,y1,'r:',x,y2,'g')
+# plt.legend((l2,l3,l1),('dane y1','dane y2','y1*y2'))
+# plt.xlabel('Czas')
+# plt.ylabel('Pozycja')
+# plt.title('Wykres ')
+# plt.grid(True)
+# plt.show()
+
+###------------------------------------REALIZACJA ZADAN----------------------------------
+
+
+
+#zad3
+
+a1=np.array([np.linspace(1,5,5),
+            np.linspace(5,1,5)])
+a2=np.zeros((3,2))
+a3=np.array(np.full((2,3),2))
+a4=np.arange(-90,-60,10)
+a5=np.array(np.full((5,1),10))
+
+A=np.block([[a3],[a4]])
+A=np.block([[a2,A]])
+A=np.block([[a1],[A]])
+A=np.block([[A,a5]])
+#print(A)
+
+#zad4
+B=A[2,:] + A[4,:]
+
+#zad5
+C=[np.max(A[:,0]),np.max(A[:,1]),np.max(A[:,2]),np.max(A[:,3]),np.max(A[:,4]),np.max(A[:,5])]
+
+#zad6
+D1=np.delete(B,5,0)
+D=np.delete(D1,0,0)
