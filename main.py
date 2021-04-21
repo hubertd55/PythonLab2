@@ -272,12 +272,97 @@ for i in range(0,np.size(E2),1):
 # print(D*E)
 
 #zad11
-def losowa():
-    Q=np.random.rand(10,10)
-    Slad=np.trace(Q)
-    return Q,Slad
+# def losowa():
+#     Q=np.random.rand(10,10)
+#     Slad=np.trace(Q)
+#     return Q,Slad
+#
+# m,n=losowa()
+# print(m)
+# print(n)
 
-m,n=losowa()
-print(m)
-print(n)
+#zad12
+# def zad12(P):
+#     nn = np.size(P[0])
+#     print(P)
+#     for i in range(0, nn, 1):
+#         P[i, i] = 0
+#     for i in range(0, nn, 1):
+#         P[i, nn - 1 - i] = 0
+#     return P
+#
+# Z = np.random.rand(5, 5)
+# tempz=zad12(Z)
+# print(tempz)
 
+#zad13
+# def zad13(L,s=0):
+#     nl = np.size(L[0])
+#     for i in range(0, nl, 2):
+#         s = s + np.sum(L[i, :])
+#     return s
+#
+# Ltemp = np.array([[1, 2, 3], [7, 8, 9],[4,5,7]])
+# Lk=zad13(Ltemp)
+# print(Lk)
+
+#zad14
+# def lambdaa():
+#     x=np.arange(-10, 10, 0.1)
+#     y=np.cos(2.0*x)
+#     plt.plot(x, y,'r:')
+#     plt.show()
+#
+# lambdaa()
+
+#zad15
+# def lambdaa2():
+#     x=np.arange(-10, 10, 0.1)
+#     y=np.cos(2.0*x)
+#     y21 = [np.sin(i) for i in x if i < 0]
+#     y22= [np.sqrt(i) for i in x if i >= 0]
+#     y2=y21+y22
+#     plt.plot(x, y,'r:',x, y2,'g--')
+#     plt.show()
+#
+# lambdaa2()
+
+#zad17
+
+# def lambdaa3():
+#     x=np.arange(-10, 10, 0.1)
+#     y1=np.cos(2.0*x)
+#     y21 = [np.sin(i) for i in x if i < 0]
+#     y22= [np.sqrt(i) for i in x if i >= 0]
+#     y2=y21+y22
+#     y3=3*y1+y2
+#     plt.plot(x, y1,'r:',x, y2,'g--',x, y3,'b*')
+#     plt.show()
+#
+# lambdaa3()
+
+
+#zad18
+# G = np.array([[10,5,1,7],[10,9,5,5],[1,6,7,3],[10,0,1,5]])
+# H=np.array([[34],[44],[25],[27]])
+# print(G)
+# print(H)
+# Gprim=np.linalg.inv(G)
+# X=Gprim@H
+# print(X)
+
+#zad19
+
+a=0.0
+b=2*np.pi
+i=1000000
+dx = (b - a) / i
+integr = 0
+for x in range(i):
+    x = x * dx + a
+    fx1 = np.sin(x)
+    x += dx
+    fx2 = np.sin(x)
+    integr = integr + 0.5 * dx * (fx1 + fx2)
+
+print(integr)
