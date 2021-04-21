@@ -237,3 +237,47 @@ C=[np.max(A[:,0]),np.max(A[:,1]),np.max(A[:,2]),np.max(A[:,3]),np.max(A[:,4]),np
 D1=np.delete(B,5,0)
 D=np.delete(D1,0,0)
 
+#zad7
+for i in range(0,np.size(D),1):
+    if D[i] == 4.0:
+        D[i]=0
+
+#zad8
+
+# E=C
+for i in range(0,np.size(C),1):
+    if C[i]==np.max(C):
+        E2=np.delete(C,i)
+
+for i in range(0,np.size(E2),1):
+    if C[i]==np.min(C):
+        E=np.delete(E2,i)
+
+
+#zad9
+# print('maximum')
+# for i in range(0,5,1):
+#     if np.max(A) in A[i,:]:
+#         print(A[i,:])
+#
+# print('minimum')
+# for i in range(0,5,1):
+#     if np.min(A) in A[i,:]:
+#         print(A[i,:])
+
+#zad10
+# print('mnozenie macierzowe')
+# print(D@E)
+# print('mnozenie tablicowe')
+# print(D*E)
+
+#zad11
+def losowa():
+    Q=np.random.rand(10,10)
+    Slad=np.trace(Q)
+    return Q,Slad
+
+m,n=losowa()
+print(m)
+print(n)
+
